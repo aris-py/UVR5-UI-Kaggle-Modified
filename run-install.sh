@@ -6,8 +6,8 @@ rm *.bat
 # Function to create or activate a virtual environment
 prepare_install() {
     if [ -d ".venv" ]; then
-        echo "Venv found. This implies Applio has been already installed or this is a broken install"
-        printf "Do you want to execute run-applio.sh? (Y/N): " >&2
+        echo "Venv found. This implies UVR5 has been already installed or this is a broken install"
+        printf "Do you want to execute run-UVR5.sh? (Y/N): " >&2
         read -r r
         r=$(echo "$r" | tr '[:upper:]' '[:lower:]')
         if [ "$r" = "y" ]; then
@@ -37,7 +37,7 @@ prepare_install() {
         echo "Installing pip version less than 24.1..."
         python -m pip install "pip<24.1"
         echo
-        echo "Installing Applio dependencies..."
+        echo "Installing UVR5 dependencies..."
         python -m pip install -r requirements.txt
         python -m pip uninstall torch torchvision torchaudio -y
         python -m pip install torch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 --index-url https://download.pytorch.org/whl/cu121
@@ -63,7 +63,7 @@ finish() {
         exit 1
     fi
     clear
-    echo "Applio has been successfully downloaded. Run the file run-applio.sh to run the web interface!"
+    echo "Applio has been successfully downloaded. Run the file run-uvr5.sh to run the web interface!"
     exit 0
 }
 
