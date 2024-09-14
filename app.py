@@ -557,9 +557,9 @@ with gr.Blocks(theme=loadThemes.load_json() or "NoCrypt/miku", title=" UVR5 UI "
 
             roformer_button.click(roformer_separator, [roformer_audio, roformer_model, roformer_output_format, roformer_overlap, roformer_segment_size], [roformer_stem1, roformer_stem2])
         
-        with gr.TabItem("MDX23C"):
-            with gr.Row():
-                mdx23c_model = gr.Dropdown(
+            with gr.TabItem("MDX23C"):
+                with gr.Row():
+                 mdx23c_model = gr.Dropdown(
                     label = "Select the Model",
                     choices = mdx23c_models,
                     interactive = True
