@@ -450,20 +450,12 @@ def select_themes_tab():
     )
 
 
-with gr.Blocks(theme=loadThemes.load_json() or "NoCrypt/miku", title=" UVR5 UI ") as app:
+with gr.Blocks(theme=gr.themes.load_themes() or "NoCrypt/miku", title="UVR5 UI", icon="https://i.postimg.cc/3J95v7CL/uvricon.png") as app:
     gr.Markdown("<h1> UVR5 UI </h1>")
     gr.Markdown("If you like UVR5 UI you can star my repo on [GitHub](https://github.com/Eddycrack864/UVR5-UI)")
     gr.Markdown("Try UVR5 UI on Hugging Face with A100 [here](https://huggingface.co/spaces/TheStinger/UVR5_UI)")
     with gr.Tabs():
-
-        app.config.css = """
-        <style>
-            favicon {
-                href: 'https://github.com/aris-py/UVR5-UI-Modified/blob/main/assets/uvricon.png?raw=true';
-            }
-        </style>
-    """
-    with gr.TabItem("BS/Mel Roformer"):
+        with gr.TabItem("BS/Mel Roformer"):
             with gr.Row():
                 roformer_model = gr.Dropdown(
                     label = "Select the Model",
@@ -557,9 +549,9 @@ with gr.Blocks(theme=loadThemes.load_json() or "NoCrypt/miku", title=" UVR5 UI "
 
             roformer_button.click(roformer_separator, [roformer_audio, roformer_model, roformer_output_format, roformer_overlap, roformer_segment_size], [roformer_stem1, roformer_stem2])
         
-            with gr.TabItem("MDX23C"):
-                with gr.Row():
-                 mdx23c_model = gr.Dropdown(
+        with gr.TabItem("MDX23C"):
+            with gr.Row():
+                mdx23c_model = gr.Dropdown(
                     label = "Select the Model",
                     choices = mdx23c_models,
                     interactive = True
