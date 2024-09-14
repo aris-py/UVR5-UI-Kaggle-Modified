@@ -447,21 +447,20 @@ def select_themes_tab():
         outputs=[],
     )
 
-
 favicon_path = "aris-py/UVR5-UI-Modified/assets/favicon.ico"
 
 with gr.Blocks(
-        theme=gr.themes.load_themes() or "NoCrypt/miku", 
-        title="UVR5 UI",
+        title="🎵 UVR5 UI 🎵", 
         favicon_path=favicon_path  
     ) as app:
     
-    gr.Markdown("<h1> UVR5 UI </h1>")
+    gr.Markdown("<h1> 🎵 UVR5 UI 🎵 </h1>")
     gr.Markdown("If you like UVR5 UI you can star my repo on [GitHub](https://github.com/Eddycrack864/UVR5-UI)")
     gr.Markdown("Try UVR5 UI on Hugging Face with A100 [here](https://huggingface.co/spaces/TheStinger/UVR5_UI)")
     
     with gr.Tabs():
         pass
+
         with gr.TabItem("BS/Mel Roformer"):
             with gr.Row():
                 roformer_model = gr.Dropdown(
