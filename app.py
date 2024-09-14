@@ -449,11 +449,10 @@ def select_themes_tab():
 
 favicon_path = "aris-py/UVR5-UI-Modified/assets/favicon.ico"
 
-with gr.Blocks(
-        title="🎵 UVR5 UI 🎵", 
-        favicon_path=favicon_path  
-    ) as app:
-    
+favicon_html = f'<link rel="icon" href="{favicon_path}" type="image/x-icon">'
+
+with gr.Blocks(title="🎵 UVR5 UI 🎵") as app:
+    gr.HTML(favicon_html) 
     gr.Markdown("<h1> 🎵 UVR5 UI 🎵 </h1>")
     gr.Markdown("If you like UVR5 UI you can star my repo on [GitHub](https://github.com/Eddycrack864/UVR5-UI)")
     gr.Markdown("Try UVR5 UI on Hugging Face with A100 [here](https://huggingface.co/spaces/TheStinger/UVR5_UI)")
