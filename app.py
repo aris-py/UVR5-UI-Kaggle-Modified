@@ -15,8 +15,6 @@ i18n = I18nAuto()
 
 import assets.themes.loadThemes as loadThemes
 
-
-
 if __name__ == "__main__":
    parser = ArgumentParser(description="Separate audio into multiple stems")
    parser.add_argument("--share", action="store_true", dest="share_enabled", default=False, help="Enable sharing")
@@ -977,6 +975,8 @@ with gr.Blocks(
               * Thanks to [Nick088](https://huggingface.co/Nick088) for the help to fix roformers.
               * Thanks to [yt_dlp](https://github.com/yt-dlp/yt-dlp) devs.
               * Separation by link source code and improvements by [Blane187](https://huggingface.co/Blane187).
+              * Thanks to [ArisDev](https://github.com/aris-py) for porting UVR5 UI to Kaggle and improvements.
+              
               
               You can donate to the original UVR5 project here:
               [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/uvr5)
